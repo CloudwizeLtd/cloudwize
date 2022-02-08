@@ -1,9 +1,8 @@
 # Define file locations
 $curDir = Get-Location; # This will save the files in the folder from where you run the script. Change if required.
 $csvName = "azureinventory.csv";
-$csvLocation = [System.IO.Path]::Combine($curDir, $csvName);
-$csvPath = $csvLocation;
-$xlsxPath = $csvLocation -replace ".csv", ".xlsx";
+$csvPath = [System.IO.Path]::Combine($curDir, $csvName);
+$xlsxPath = $csvPath -replace ".csv", ".xlsx";
 
 # Install ImportExcel module
 $importExelModule = Get-Module -Name ImportExcel -ListAvailable | Measure-Object;
