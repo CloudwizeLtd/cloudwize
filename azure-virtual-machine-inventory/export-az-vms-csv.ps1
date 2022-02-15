@@ -5,8 +5,8 @@ $csvPath = [System.IO.Path]::Combine($curDir, $csvName);
 $xlsxPath = $csvPath -replace ".csv", ".xlsx";
 
 # Install ImportExcel module
-$importExelModule = Get-Module -Name ImportExcel -ListAvailable | Measure-Object;
-if ($importExelModule.Count -eq 0) {
+$importExcelModule = Get-Module -Name ImportExcel -ListAvailable | Measure-Object;
+if ($importExcelModule.Count -eq 0) {
     Write-Output "Module 'ImportExcel' is not installed. Installing now..."
     Install-Module ImportExcel -Scope CurrentUser -Force;
 }
